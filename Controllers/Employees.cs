@@ -60,9 +60,13 @@ namespace WebAppConnect.Controllers
         {
             if (ModelState.IsValid)
             {
+                employee.DOB = DateTime.Today.AddYears(-10);
                 _context.Add(employee);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //ViewData["result"] = employee.ID;
+                
+                return Content(employee.ID.ToString());
+                //return RedirectToAction(nameof(Index));
             }
             return View(employee);
         }

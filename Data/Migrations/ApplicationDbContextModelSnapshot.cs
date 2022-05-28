@@ -219,14 +219,17 @@ namespace WebAppConnect.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Department")
+                    b.Property<DateTime>("DOB")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Department")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Gender")
+                    b.Property<int>("Gender")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("JobRole")
